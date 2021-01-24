@@ -18,7 +18,7 @@ if (isset($_POST['selcountry'])) {
     if ($countryid==0) exit();
     $sel2 = "SELECT id, City FROM Cities WHERE Countryid=" . $countryid;
     $res = mysqli_query($link, $sel2);
-    echo "<select name='cityid' class='col-sm-3 col-md-3 col-lg-3'>";
+    echo "<br><select name='cityid' class='col-sm-3 col-md-3 col-lg-3'>";
     echo "<option value='0'>Выберите город...</option>";
     while ($row = mysqli_fetch_array($res, MYSQLI_NUM)) {
         echo "<option value='" . $row[0] . "'>" . $row[1] . "</option>";
@@ -41,7 +41,7 @@ if (isset($_POST['selsity'])) {
         echo '<td>'.$row[3].'</td>';
         echo '<td>'.$row[4].'</td>';
         echo '<td>'.$row[5].'</td>';
-        echo "<td><a href='index.php?page=5&hotel=".$row[0]."' target='_blank'>Детальнее...</a></td>";
+        echo "<td><a href='pages/hotelinfo.php?hotel=".$row[0]."' target='_blank'>Детальнее...</a></td>";
         echo '</tr>';
     }
     echo '</table>';

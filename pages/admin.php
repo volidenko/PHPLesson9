@@ -1,7 +1,7 @@
 <h3>Admin Forms</h3>
 <div class="row">
     <div class="col-sm-6 col-md-6 col-lg-6">
-        <div class="text-center">Страны</div>
+        <div class="text-center"><h3>Страны</h3></div>
         <?php
         $sel1 = "SELECT * FROM Countries ORDER BY Id";
         $link = connect();
@@ -50,7 +50,7 @@
     </div>
 
     <div class="col-sm-6 col-md-6 col-lg-6">
-        <div class="text-center">Города</div>
+        <div class="text-center"><h3>Города</h3></div>
         <?php
         echo "<form action='index.php?page=4' method='POST' id='cityform'>";
         $sel2 = "SELECT ci.id, ci.City, co.Country, co.id FROM Countries co JOIN Cities ci ON ci.countryid= co.id";
@@ -78,7 +78,6 @@
         echo "<button type='submit' name='addcity' class='btn btn-sm btn-info'>Добавить</button>";
         echo "<button type='submit' name='removecity' class='btn btn-sm btn-warning'>Удалить</button>";
         echo '</form>';
-
         if (isset($_POST['addcity'])) {
             $countryid = $_POST["countryid"];
             $city = trim(htmlspecialchars($_POST["city"]));
@@ -111,7 +110,7 @@
 
 <div class="row">
     <div class="col-sm-6 col-md-6 col-lg-6">
-        <div class="text-center">Отели</div>
+        <div class="text-center"><h3>Отели</h3></div>
         <?php
         $sel3 = "SELECT ho.id, ho.hotel, ci.id, ci.City, co.id, co.Country, ho.stars FROM Hotels ho JOIN Cities ci ON ho.cityid=ci.id
     JOIN Countries co ON ci.CountryId = co.id";
@@ -177,8 +176,9 @@
         }
         ?>
     </div>
+
     <div class="col-sm-6 col-md-6 col-lg-6">
-        <div class="text-center">Фото</div>
+        <div class="text-center"><h3>Фото</h3></div>
         <?php
         echo "<form action='index.php?page=4' id='photoform' enctype='multipart/form-data' method='POST'>";
         $link = connect();

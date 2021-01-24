@@ -13,7 +13,6 @@ include_once("pages/functions.php");
 </head>
 
 <body>
-
     <header class="row">
         <div class="col-sm-12 col-md-12 col-lg-12"></div>
     </header>
@@ -33,8 +32,8 @@ include_once("pages/functions.php");
                 if($page==2) include_once("pages/comments.php");
                 if($page==3) include_once("pages/registration.php");
                 if($page==4) include_once("pages/admin.php");
-                if($page==6)
-                include_once("pages/private.php");
+                if($page==5) include_once("pages/hotelinfo.php");
+                if($page==6) include_once("pages/private.php");
             }
         ?>
         </div>
