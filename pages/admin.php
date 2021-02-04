@@ -1,3 +1,11 @@
+<?php
+if (!isset($_SESSION['radmin'])) 
+{ 
+echo "<h3/><span style='color:red;'>For Administrators Only! 
+</span><h3/>"; 
+exit(); 
+} 
+?>
 <h3>Admin Forms</h3>
 <div class="row">
     <div class="col-sm-6 col-md-6 col-lg-6">
